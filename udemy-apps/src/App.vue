@@ -1,47 +1,53 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+    <h1>Vue 学習テーマ一覧（✖ Typescript ✖ Router ✖ Pinia）</h1>
+    <ul>
+      <li @click="currentTheme = 'script'">script</li>
+      <li @click="currentTheme = 'reactive'">reactive</li>
+      <li @click="currentTheme = 'props'">Props</li>
+      <li @click="currentTheme = 'emit'">Emit</li>
+      <li @click="currentTheme = 'slot'">Slot</li>
+    </ul>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <component :is="currentComponent" />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import ScriptExample from './themes/script-example/ScriptExample.vue'
+import ReactiveExample from './themes/script-example/ReactiveExample.vue'
+import PropsExample from './themes/props-example/PropsExample.vue'
+import EmitExample from './themes/emit-example/EmitExample.vue'
+import SlotExample from './themes/slot-example/SlotExample.vue'
+
+export default {
+  components: {
+    ScriptExample,
+    ReactiveExample,
+    PropsExample,
+    EmitExample,
+    SlotExample,
+  },
+  data() {
+    return {
+      currentTheme: 'script',
+    }
+  },
+  computed: {
+    currentComponent() {
+      switch (this.currentTheme) {
+        case 'reactive':
+          return 'ReactiveExample'
+        case 'props':
+          return 'PropsExample'
+        case 'emit':
+          return 'EmitExample'
+        case 'slot':
+          return 'SlotExample'
+        default:
+          return 'ScriptExample'
+      }
+    },
+  },
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
