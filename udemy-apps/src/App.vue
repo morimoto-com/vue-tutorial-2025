@@ -16,6 +16,9 @@ import ScriptExample from './themes/script-example/ScriptExample.vue'
 import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import TemplateExample from './themes/base-example/TemplateExample.vue'
 import VonExample from './themes/base-example/VonExample.vue'
+import VonEtcExample from './themes/base-example/VonEtcExample.vue'
+import VmodelExample from './themes/base-example/VmodelExample.vue'
+import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import PropsExample from './themes/props-example/PropsExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
@@ -29,6 +32,9 @@ export default {
         reactive: markRaw(ReactiveExample),
         template: markRaw(TemplateExample),
         von: markRaw(VonExample),
+        vonEtc: markRaw(VonEtcExample),
+        vmodel: markRaw(VmodelExample),
+        computed: markRaw(ComputedExample),
         props: markRaw(PropsExample),
         emit: markRaw(EmitExample),
         slot: markRaw(SlotExample),
