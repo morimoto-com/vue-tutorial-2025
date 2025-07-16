@@ -20,6 +20,8 @@ import VonEtcExample from './themes/base-example/VonEtcExample.vue'
 import VmodelExample from './themes/base-example/VmodelExample.vue'
 import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import WatchExample from './themes/computed-example/WatchExample.vue'
+import ClassExample from './themes/base-example/ClassExample.vue'
+import StyleExample from './themes/base-example/StyleExample.vue'
 import PropsExample from './themes/props-example/PropsExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
@@ -37,6 +39,8 @@ export default {
         vmodel: markRaw(VmodelExample),
         computed: markRaw(ComputedExample),
         watch: markRaw(WatchExample),
+        class: markRaw(ClassExample),
+        style: markRaw(StyleExample),
         props: markRaw(PropsExample),
         emit: markRaw(EmitExample),
         slot: markRaw(SlotExample),
