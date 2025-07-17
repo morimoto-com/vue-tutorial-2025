@@ -18,11 +18,11 @@
 
 - [x] computed（\computed-example）
 - [x] watch（\watch-example）
-  - [] watchEffect（WatchExample.vue）
-  - [] watch（WatchExample.vue）
+  - [x] watchEffect（WatchExample.vue）
+  - [x] watch（WatchExample.vue）
 - [] rendering（）
-  - [] v-if
-  - [] v-show
+  - [x] v-if
+  - [x] v-show
   - [] v-for
 - [] コンポーネント
   - [] props

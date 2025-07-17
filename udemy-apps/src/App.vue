@@ -21,6 +21,7 @@ import VonExample from './themes/base-example/VonExample.vue'
 import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
 import PropsExample from './themes/props-example/PropsExample.vue'
+import VforEtcExample from './themes/rendering-example/VforEtcExample.vue'
 import VforExample from './themes/rendering-example/VforExample.vue'
 import VifExample from './themes/rendering-example/VifExample.vue'
 import VshowExample from './themes/rendering-example/VshowExample.vue'
@@ -47,6 +48,7 @@ export default {
         vif: markRaw(VifExample),
         vshow: markRaw(VshowExample),
         vfor: markRaw(VforExample),
+        vforEtc: markRaw(VforEtcExample),
         props: markRaw(PropsExample),
         emit: markRaw(EmitExample),
         slot: markRaw(SlotExample),
