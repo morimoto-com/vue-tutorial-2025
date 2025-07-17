@@ -12,19 +12,19 @@
 
 <script>
 import { markRaw } from 'vue'
-import ScriptExample from './themes/script-example/ScriptExample.vue'
-import ReactiveExample from './themes/script-example/ReactiveExample.vue'
-import TemplateExample from './themes/base-example/TemplateExample.vue'
-import VonExample from './themes/base-example/VonExample.vue'
-import VonEtcExample from './themes/base-example/VonEtcExample.vue'
-import VmodelExample from './themes/base-example/VmodelExample.vue'
-import ComputedExample from './themes/computed-example/ComputedExample.vue'
-import WatchExample from './themes/computed-example/WatchExample.vue'
 import ClassExample from './themes/base-example/ClassExample.vue'
 import StyleExample from './themes/base-example/StyleExample.vue'
-import PropsExample from './themes/props-example/PropsExample.vue'
+import TemplateExample from './themes/base-example/TemplateExample.vue'
+import VmodelExample from './themes/base-example/VmodelExample.vue'
+import VonEtcExample from './themes/base-example/VonEtcExample.vue'
+import VonExample from './themes/base-example/VonExample.vue'
+import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
+import PropsExample from './themes/props-example/PropsExample.vue'
+import ReactiveExample from './themes/script-example/ReactiveExample.vue'
+import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
+import WatchExample from './themes/watch-example/WatchExample.vue'
 
 export default {
   data() {

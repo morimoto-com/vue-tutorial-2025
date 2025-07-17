@@ -1,35 +1,40 @@
-# udemy-apps
+# 学習スケジュール
 
-This template should help get you started developing with Vue 3 in Vite.
+## 基礎（base）
 
-## Recommended IDE Setup
+- [x] スクリプト基礎（\script-example\ScriptExample.vue）
+- [x] リアクティブ基礎（\script-example\ReactiveExample）
+- [x] template基礎（\base-example）
+  - [x] v-text（TemplateExample.vue）
+  - [x] v-html（TemplateExample.vue）
+  - [x] v-bind（TemplateExample.vue）
+  - [x] v-mode（VmodeExample.vue）
+  - [x] v-on（VonExample.vue）
+  - [x] v-on応用（VonEtcExample.vue）
+  - [x] v-bind応用～class～（ClassExample.vue）
+  - [x] v-bind応用～style～（StyleExample.vue）
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 応用
 
-## Customize configuration
+- [x] computed（\computed-example）
+- [x] watch（\watch-example）
+  - [] watchEffect（WatchExample.vue）
+  - [] watch（WatchExample.vue）
+- [] rendering（）
+  - [] v-if
+  - [] v-show
+  - [] v-for
+- [] コンポーネント
+  - [] props
+  - [] emits
+  - [] slot
+- [] ライフサイクル
+  - [] onMounted
+  - [] onUpdated
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 発展
 
-## Project Setup
-
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+- [] API連携（axios/fetch）
+- [] Router
+- [] Pinia
+- [] CompositionAPI
