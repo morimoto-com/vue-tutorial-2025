@@ -20,11 +20,13 @@
 - [x] watch（\watch-example）
   - [x] watchEffect（WatchExample.vue）
   - [x] watch（WatchExample.vue）
-- [] rendering（）
-  - [x] v-if
-  - [x] v-show
-  - [] v-for
+- [x] rendering（\rendering-example）
+  - [x] v-if（VifExample.vue）
+  - [x] v-show（VshowExample.vue）
+  - [x] v-for（VforExample.vue、VforEtcExample.vue）
 - [] コンポーネント
+  - [] コンポーネント呼び出し方法
+  - [] グローバル登録
   - [] props
   - [] emits
   - [] slot
