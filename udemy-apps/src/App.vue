@@ -21,6 +21,9 @@ import VonExample from './themes/base-example/VonExample.vue'
 import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
 import PropsExample from './themes/props-example/PropsExample.vue'
+import VforExample from './themes/rendering-example/VforExample.vue'
+import VifExample from './themes/rendering-example/VifExample.vue'
+import VshowExample from './themes/rendering-example/VshowExample.vue'
 import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
@@ -41,6 +44,9 @@ export default {
         watch: markRaw(WatchExample),
         class: markRaw(ClassExample),
         style: markRaw(StyleExample),
+        vif: markRaw(VifExample),
+        vshow: markRaw(VshowExample),
+        vfor: markRaw(VforExample),
         props: markRaw(PropsExample),
         emit: markRaw(EmitExample),
         slot: markRaw(SlotExample),
