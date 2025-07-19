@@ -1,16 +1,11 @@
 <template>
-  <div>
-    <h2>Props Example</h2>
-    <ChildComponent message="Hello from parent!" />
-  </div>
+  <!-- definePropsの属性は子コンポーネントへは継承されない -->
+  <ChildComponent :foo="count" bar="Hello"/>
+  <button @click="count++">button</button>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import ChildComponent from './PropsExampleChild.vue';
-
-export default {
-  components: {
-    ChildComponent
-  }
-};
+const count = ref(0)
 </script>
