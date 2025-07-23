@@ -1,26 +1,20 @@
 <template>
-  <div>
-    <h2>Slot Example</h2>
-    <SlotExampleChild>
-      <template #header>
-        <h3>これは親から渡された Header スロットです</h3>
-      </template>
-
-      <p>これはデフォルトスロット（子に挿入）です。</p>
-
-      <template #footer>
-        <small>フッター領域 - 親が提供</small>
-      </template>
-    </SlotExampleChild>
-  </div>
+  <h1>Slots</h1>
+  <SlotExampleChild>
+    <!-- defaultはtemplate指定不要 -->
+    <h2>Hello</h2>
+    <p>How are you?</p>
+    <template v-slot:header>
+      <h2>header</h2>
+    </template>
+    <template #main>
+      <h2>main</h2>
+    </template>
+    <template #footer>
+      <h2>footer</h2>
+    </template>
+  </SlotExampleChild>
 </template>
-
-<script>
-import SlotExampleChild from './SlotExampleChild.vue';
-
-export default {
-  components: {
-    SlotExampleChild
-  }
-};
+<script setup>
+import SlotExampleChild from './SlotExampleChild.vue'
 </script>
