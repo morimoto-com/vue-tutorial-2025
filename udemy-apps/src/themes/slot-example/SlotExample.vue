@@ -4,8 +4,11 @@
     <!-- defaultはtemplate指定不要 -->
     <h2>Hello</h2>
     <p>How are you?</p>
-    <template v-slot:header>
-      <h2>header</h2>
+    <template #headerslot="slotProps">
+      <p>pageCount:{{ slotProps.pageCount }}</p>
+    </template>
+    <template v-slot:header="slotProps">
+      <h2 v-if>header</h2>
     </template>
     <template #main>
       <h2>main</h2>
