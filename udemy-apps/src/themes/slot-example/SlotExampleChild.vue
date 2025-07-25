@@ -12,7 +12,7 @@
       <p>こちらはslotタグのデフォルト内容（フォールバックコンテンツ）</p>
     </slot>
     <!-- 名前付きスロットを定義することで複数のslotを指定可能 -->
-    <slot name="header" />
+    <slot name="header" :page-count="pageCount" />
     <slot name="main" />
     <slot name="footer" />
   </div>

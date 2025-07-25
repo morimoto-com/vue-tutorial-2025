@@ -8,7 +8,9 @@
       <p>pageCount:{{ slotProps.pageCount }}</p>
     </template>
     <template v-slot:header="slotProps">
-      <h2 v-if>header</h2>
+      <h2 v-if="slotProps.pageCount === 1">header1</h2>
+      <h2 v-if="slotProps.pageCount === 2">header2</h2>
+      <h2 v-if="slotProps.pageCount === 3">header3</h2>
     </template>
     <template #main>
       <h2>main</h2>

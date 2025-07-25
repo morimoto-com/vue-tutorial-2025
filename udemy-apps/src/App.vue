@@ -19,6 +19,7 @@ import VmodelExample from './themes/base-example/VmodelExample.vue'
 import VonEtcExample from './themes/base-example/VonEtcExample.vue'
 import VonExample from './themes/base-example/VonExample.vue'
 import ComponentExample from './themes/component-example/ComponentExample.vue'
+import DynamicComponentExample from './themes/component-example/DynamicComponentExample.vue'
 import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
 import DomAccessExample from './themes/mount-example/DomAccessExample.vue'
@@ -58,6 +59,7 @@ export default {
         mount: markRaw(MountExample),
         domaccess: markRaw(DomAccessExample),
         slot: markRaw(SlotExample),
+        dynamic: markRaw(DynamicComponentExample),
       },
     }
   },
