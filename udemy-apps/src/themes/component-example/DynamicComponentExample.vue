@@ -5,14 +5,7 @@
   <button @click="currentComp = CompC">C</button>
   <!-- 切り替えの度にmountとunmountが発生している -->
   <!-- リアクティブ情報を保持するにはkeepAlive属性の付与が必要 -->
-  <keep-alive include="CompB,CompC">
-    <!-- <keep-alive include="['CompA','CompB']"> 配列でも指定可能 -->
-    <!-- <keep-alive max="2">  最新2コのコンポーネントまでしか保持されない -->
-    <!-- include属性で対象を限定できる -->
-    <component :is="currentComp" />
-  </keep-alive>
-  <keep-alive exclude="CompB">
-    include属性で対象を限定できる
+  <keep-alive>
     <component :is="currentComp" />
   </keep-alive>
 </template>
