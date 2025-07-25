@@ -4,6 +4,7 @@
   <p>count:{{ count }}</p>
 </template>
 <script setup>
+defineOptions({name: 'CompB'})
 import { onActivated, onDeactivated, onMounted, onUnmounted, ref } from 'vue'
 const count = ref(0)
 onMounted(() => {
