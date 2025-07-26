@@ -21,13 +21,37 @@
       <button @click="isShow = false">Close</button>
     </dialog>
   </teleport>
-  <!-- deferを用いる遅延読み込みされる -->
+  <!-- deferを用いると親コンポーネントの DOM がすべてレンダリングされた後に、teleport 先に要素が移動される。-->
   <teleport to="body" defer><p>A</p></teleport>
 </template>
 <script setup>
-import { ref, shallowRef } from 'vue'
-import CompA from './dynamic-components/DynamicCompA.vue'
-import CompB from './dynamic-components/DynamicCompB.vue'
+import { ref, shallowRef, defineAsyncComponent } from 'vue'
+// 遅延読み込み設定をすることで実際にコンポーネントが読み込まれるまでダウンロードしなくなる
+const CompA = defineAsyncComponent(() =>
+  import('./dynamic-components/DynamicCompA.vue').catch((err) => {
+    console.error('Component load failed:', err)
+    // 明示的に失敗させる（これをしないと undefined になる）
+    return Promise.reject(err)
+  }),
+)
+// import CompA from './dynamic-components/DynamicCompA.vue'
+import Baseloader from './dynamic-components/Baseloader.vue'
+import ErrorComp from './dynamic-components/ErrorComp.vue'
+const CompB = defineAsyncComponent({
+  loader: () =>
+    import('./dynamic-components/DynamicCompB.vue').catch((err) => {
+      console.error('Component load failed:', err)
+      return Promise.reject(err)
+    }),
+  // ローディング中のコンポーネントを指定
+  loadingComponent: Baseloader,
+  // ローディングコンポーネントの表示遅延を指定（デフォルト：200m）
+  delay: 200,
+  // ローディング失敗時のコンポーネントを指定
+  errorComponent: ErrorComp,
+  timeout: 2000,
+})
+// import CompB from './dynamic-components/DynamicCompB.vue'
 import DynamicCompC from './dynamic-components/DynamicCompC.vue'
 // 先頭のデータだけをリアクティブにする場合はshallowRefを利用する
 const currentComp = shallowRef(CompA)
