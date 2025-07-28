@@ -20,6 +20,7 @@ import VonEtcExample from './themes/base-example/VonEtcExample.vue'
 import VonExample from './themes/base-example/VonExample.vue'
 import ComponentExample from './themes/component-example/ComponentExample.vue'
 import DynamicComponentExample from './themes/component-example/DynamicComponentExample.vue'
+import ComposableExample from './themes/composable-example/ComposableExample.vue'
 import ComputedExample from './themes/computed-example/ComputedExample.vue'
 import DefineModelExample from './themes/definemodel-example/DefineModelExample.vue'
 import EmitExample from './themes/emit-example/EmitExample.vue'
@@ -62,6 +63,7 @@ export default {
         slot: markRaw(SlotExample),
         dynamic: markRaw(DynamicComponentExample),
         defineModel: markRaw(DefineModelExample),
+        composable: markRaw(ComposableExample),
       },
     }
   },
