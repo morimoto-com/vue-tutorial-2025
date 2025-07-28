@@ -35,6 +35,8 @@ import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
+import AnimationExample from './themes/animation-example/AnimationExample.vue'
+import TransitionComponentExample from './themes/animation-example/TransitionComponentExample.vue'
 
 export default {
   data() {
@@ -64,6 +66,8 @@ export default {
         dynamic: markRaw(DynamicComponentExample),
         defineModel: markRaw(DefineModelExample),
         composable: markRaw(ComposableExample),
+        animation: markRaw(AnimationExample),
+        transition: markRaw(TransitionComponentExample),
       },
     }
   },
