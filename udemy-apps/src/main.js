@@ -1,5 +1,5 @@
 import './assets/main.css'
-
+import 'animate.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 // ★ここを追加でグローバル登録 ※保守性の観点からあまりおすすめはされない

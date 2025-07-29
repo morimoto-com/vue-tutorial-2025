@@ -37,6 +37,7 @@ import SlotExample from './themes/slot-example/SlotExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
 import AnimationExample from './themes/animation-example/AnimationExample.vue'
 import TransitionComponentExample from './themes/animation-example/TransitionComponentExample.vue'
+import ModeExample from './themes/animation-example/ModeExample.vue'
 
 export default {
   data() {
@@ -68,6 +69,7 @@ export default {
         composable: markRaw(ComposableExample),
         animation: markRaw(AnimationExample),
         transition: markRaw(TransitionComponentExample),
+        mode: markRaw(ModeExample),
       },
     }
   },
