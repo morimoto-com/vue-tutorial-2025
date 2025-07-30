@@ -12,6 +12,11 @@
 
 <script>
 import { markRaw } from 'vue'
+import AnimationExample from './themes/animation-example/AnimationExample.vue'
+import AnimationExtExample from './themes/animation-example/AnimationExtExample.vue'
+import ModeExample from './themes/animation-example/ModeExample.vue'
+import TransitionComponentExample from './themes/animation-example/TransitionComponentExample.vue'
+import TransitionGroupExample from './themes/animation-example/TransitionGroupExample.vue'
 import ClassExample from './themes/base-example/ClassExample.vue'
 import StyleExample from './themes/base-example/StyleExample.vue'
 import TemplateExample from './themes/base-example/TemplateExample.vue'
@@ -35,9 +40,6 @@ import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
-import AnimationExample from './themes/animation-example/AnimationExample.vue'
-import TransitionComponentExample from './themes/animation-example/TransitionComponentExample.vue'
-import ModeExample from './themes/animation-example/ModeExample.vue'
 
 export default {
   data() {
@@ -70,6 +72,8 @@ export default {
         animation: markRaw(AnimationExample),
         transition: markRaw(TransitionComponentExample),
         mode: markRaw(ModeExample),
+        animationExt: markRaw(AnimationExtExample),
+        transitionGroup: markRaw(TransitionGroupExample),
       },
     }
   },
