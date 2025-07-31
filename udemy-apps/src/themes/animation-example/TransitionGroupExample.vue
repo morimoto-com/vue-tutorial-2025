@@ -1,45 +1,52 @@
 <template>
   <h1>Animation</h1>
   <button @click="isShow = !isShow">switch</button>
-  <!-- appear:初期表示時にもアニメーションを動作させる -->
-  <Transition name="fade" enter-active-class="hello" appear>
+  <!-- TransitionGroup:複数の要素にアニメーションを定義できる -->
+  <!-- TransitionGroupはkey属性が必須 -->
+  <!-- TransitionGroupはmodeプロップスは使えない -->
+  <h2>TransitionGroupの基礎</h2>
+  <TransitionGroup name="fade">
     <div v-if="isShow">Hello Fade</div>
-  </Transition>
-  <Transition name="slide" appear>
-    <div v-if="isShow">Hello Slide</div>
-  </Transition>
-  <h1>animate.cssをつかったアニメーション適用</h1>
-  <p class="animate__animated animate__bounce">An animated element</p>
-  <transition
-    name="ani"
-    enter-active-class="animate__animated animate__bounce"
-    leave-active-class="animate__animated animate__swing"
-    appear
-  >
-    <div v-if="isShow">An animated element</div>
-  </transition>
+    <div key="hello2">Hello Fade</div>
+    <div v-if="!isShow">Hello Fade</div>
+  </TransitionGroup>
+  <h2>TransitionGroupをv-forで実装</h2>
+  <input v-model="newFruit" type="text" />
+  <button @click="fruits.unshift(newFruit)">Add</button>
+  <!-- tagを指定すると任意のタグ名で要素を囲むことができる -->
+  <TransitionGroup name="fade" tag="div">
+    <div v-for="(fruit, index) in fruits" :key="fruit" @click="fruits.splice(index, 1)">
+      {{ fruit }}
+    </div>
+  </TransitionGroup>
 </template>
 <script setup>
 import { ref } from 'vue'
 const isShow = ref(true)
+const fruits = ref(['Apple', 'Banana', 'Grape'])
+const newFruit = ref('')
 </script>
 <style scoped>
-/* .v-enter-from { name指定をすることで任意の名前に変更している*/
-/* Animationライブラリサイト：https://animate.style/ (importはmain.jsに追加)*/
 .fade-enter-from {
   opacity: 0;
 }
-.fade-hello {
+.fade-enter-active {
   transition: opacity 1s;
 }
 .fade-enter-to {
   opacity: 1;
+}
+.fade-move {
+  /* 要素が追加削除された時の周りの要素の動き方をなめらかにするもの */
+  transition: transform 1s;
 }
 .fade-leave-from {
   opacity: 1;
 }
 .fade-leave-active {
   transition: opacity 1s;
+  /* こちらを付与することで削除時のmoveも滑らかになる */
+  position: absolute;
 }
 .fade-leave-to {
   opacity: 0;

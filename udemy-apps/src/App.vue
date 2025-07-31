@@ -39,6 +39,7 @@ import VshowExample from './themes/rendering-example/VshowExample.vue'
 import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
+import VueRouterExample from './themes/vuerouter-example/VueRouterExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
 
 export default {
@@ -74,6 +75,7 @@ export default {
         mode: markRaw(ModeExample),
         animationExt: markRaw(AnimationExtExample),
         transitionGroup: markRaw(TransitionGroupExample),
+        vueRouter: markRaw(VueRouterExample),
       },
     }
   },
