@@ -39,9 +39,13 @@ import VshowExample from './themes/rendering-example/VshowExample.vue'
 import ReactiveExample from './themes/script-example/ReactiveExample.vue'
 import ScriptExample from './themes/script-example/ScriptExample.vue'
 import SlotExample from './themes/slot-example/SlotExample.vue'
+import HandlerExample from './themes/vuerouter-example/HandlerExample.vue'
+import MultiViewExample from './themes/vuerouter-example/MultiViewExample.vue'
+import NestViewExample from './themes/vuerouter-example/NestViewExample.vue'
+import ParamExample from './themes/vuerouter-example/ParamExample.vue'
+import TransitionViewExample from './themes/vuerouter-example/TransitionViewExample.vue'
 import VueRouterExample from './themes/vuerouter-example/VueRouterExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
-import ParamExample from './themes/vuerouter-example/ParamExample.vue'
 
 export default {
   data() {
@@ -78,6 +82,10 @@ export default {
         transitionGroup: markRaw(TransitionGroupExample),
         vueRouter: markRaw(VueRouterExample),
         vueRouterParam: markRaw(ParamExample),
+        handlerView: markRaw(HandlerExample),
+        nestView: markRaw(NestViewExample),
+        multiView: markRaw(MultiViewExample),
+        transitionView: markRaw(TransitionViewExample),
       },
     }
   },
