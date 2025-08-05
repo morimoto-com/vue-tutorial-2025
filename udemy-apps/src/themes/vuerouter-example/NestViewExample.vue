@@ -1,6 +1,6 @@
 <template>
   <h2>RouterViewのネスト</h2>
-  <RouterLink :to="{ to: 'post', params: { id: 123 } }">Post</RouterLink>
+  <RouterLink :to="{ name: 'post', params: { id: 123 } }">Post</RouterLink>
   <RouterLink :to="{ path: '/1/like' }">Like</RouterLink>
   <p>RouterViewで表示されるエリア</p>
   <RouterView />

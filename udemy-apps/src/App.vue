@@ -46,6 +46,7 @@ import ParamExample from './themes/vuerouter-example/ParamExample.vue'
 import TransitionViewExample from './themes/vuerouter-example/TransitionViewExample.vue'
 import VueRouterExample from './themes/vuerouter-example/VueRouterExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
+import ScrolleExample from './themes/vuerouter-example/ScrolleExample.vue'
 
 export default {
   data() {
@@ -86,6 +87,7 @@ export default {
         nestView: markRaw(NestViewExample),
         multiView: markRaw(MultiViewExample),
         transitionView: markRaw(TransitionViewExample),
+        scrolle: markRaw(ScrolleExample),
       },
     }
   },

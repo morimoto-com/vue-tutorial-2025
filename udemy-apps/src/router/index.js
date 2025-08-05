@@ -101,5 +101,61 @@ const router = createRouter({
       component: TransitionView,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    console.log(to, from, savedPosition)
+    // 2秒間待ってスクロールさせる方法。（transitionなどのアニメーションを待ってスクロールさせたい場合などに使用する）
+    // return new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     if (savedPosition) {
+    //       // savedPositionはブラウザバック等で移動時のポジションを保存している
+    //       return resolve(savedPosition)
+    //     }
+    //     if (to.hash) {
+    //       return resolve({
+    //         // #XXXXなどのクラスターまで移動
+    //         el: to.hash,
+    //         // 余白
+    //         top: 20,
+    //         behavior: 'smooth', // スクロールがスムーズになる
+    //         // behavior: 'instant' // スクロールが瞬間的になる
+    //       })
+    //     }
+    //     return resolve({
+    //       top: 0,
+    //       left: 0,
+    //       behavior: 'smooth',
+    //     })
+    //   }, 2000)
+    // })
+    if (savedPosition) {
+      // savedPositionはブラウザバック等で移動時のポジションを保存している
+      return savedPosition
+    }
+    if (to.hash) {
+      return {
+        // #XXXXなどのクラスターまで移動
+        el: to.hash,
+        // 余白
+        top: 20,
+        behavior: 'smooth', // スクロールがスムーズになる
+        // behavior: 'instant' // スクロールが瞬間的になる
+      }
+    }
+    return {
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    }
+  },
+})
+// ナビゲーションガード
+router.beforeEach((to,from) => {
+  // asyncとawaitを使ってページ移動前に処理を実行させることができる
+  // async(to,from) => {
+  // await new Promise((resolve) => setTimeout(resolve, 2000))
+  console.log(to, from)
+  console.log('beforeEach')
+  // 遷移のルールを指定することができる
+  // if(to.name === 'home') return false
 })
 export default router
