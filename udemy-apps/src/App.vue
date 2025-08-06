@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Vue 学習テーマ一覧（✖ Typescript ✖ Router ✖ Pinia）</h1>
+    <h1>Vue 学習テーマ一覧（✖ Typescript）</h1>
     <ul>
       <li v-for="(component, key) in componentsMap" :key="key" @click="currentTheme = key">
         {{ key }}
@@ -47,6 +47,7 @@ import TransitionViewExample from './themes/vuerouter-example/TransitionViewExam
 import VueRouterExample from './themes/vuerouter-example/VueRouterExample.vue'
 import WatchExample from './themes/watch-example/WatchExample.vue'
 import ScrolleExample from './themes/vuerouter-example/ScrolleExample.vue'
+import PiniaExample from './themes/pinia-example/PiniaExample.vue'
 
 export default {
   data() {
@@ -88,6 +89,7 @@ export default {
         multiView: markRaw(MultiViewExample),
         transitionView: markRaw(TransitionViewExample),
         scrolle: markRaw(ScrolleExample),
+        pinia: markRaw(PiniaExample),
       },
     }
   },
