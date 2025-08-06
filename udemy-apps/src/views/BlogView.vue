@@ -12,8 +12,17 @@
   >
 </template>
 <script setup>
-import { useRoute } from 'vue-router'
+import { onBeforeRouteLeave, onBeforeRouteUpdate, useRoute } from 'vue-router'
 const route = useRoute()
+// ページのパラメータやクエリなどが更新されるときに実行される
+onBeforeRouteUpdate(() => {
+  console.log('onBeforeRouteUpdate')
+})
+// ページを離れるときに実行される
+onBeforeRouteLeave(() => {
+  console.log('onBeforeRouteLeave')
+  return window.confirm('本当にこのページを離れますか？')
+})
 console.log(route)
 </script>
 <style></style>
