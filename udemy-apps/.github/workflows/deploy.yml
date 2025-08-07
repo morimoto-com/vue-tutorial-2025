@@ -3,15 +3,11 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main # mainブランチにpushされたら実行
+      - main # mainブランチにpushされたときに実行
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: udemy-apps # すべてのrunステップでこのディレクトリを起点にする
 
     steps:
       - name: リポジトリをチェックアウト
@@ -29,13 +25,16 @@ jobs:
 
       - name: 依存関係をインストール
         run: pnpm install
+        working-directory: udemy-apps
 
-      - name: アプリケーションをビルド
+      - name: ビルド
         run: pnpm build
+        working-directory: udemy-apps
 
       - name: GitHub Pages にデプロイ
         # このアクションが内部的に gh-pages ブランチにデプロイしています。
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: udemy-apps/dist # フルパスで指定（ルートからの相対パス）
+          publish_dir: udemy-apps/dist # 注意：リポジトリ直下からの相対パス
+
