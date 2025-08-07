@@ -35,7 +35,7 @@ const CompA = defineAsyncComponent(() =>
   }),
 )
 // import CompA from './dynamic-components/DynamicCompA.vue'
-import Baseloader from './dynamic-components/Baseloader.vue'
+import Baseloader from './dynamic-components/BaseLoader.vue'
 import ErrorComp from './dynamic-components/ErrorComp.vue'
 const CompB = defineAsyncComponent({
   loader: () =>
