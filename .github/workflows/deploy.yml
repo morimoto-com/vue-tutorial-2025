@@ -8,24 +8,35 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: Setup pnpm
+    # すべての run ステップを udemy-apps ディレクトリで実行するように設定
+    defaults:
+      run:
+        working-directory: udemy-apps
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v3
+
+      - name: pnpm をセットアップ
         uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Setup Node.js
+      - name: Node.js をセットアップ
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - run: pnpm install
-      - run: pnpm build
+      - name: 依存関係をインストール
+        run: pnpm install
 
-      - name: Deploy to GitHub Pages
+      - name: ビルド
+        run: pnpm build
+
+      - name: GitHub Pages にデプロイ
+        # このアクションで自動的に`gh-pages`ブランチが作成される
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: udemy-apps/dist  # 注意：リポジトリ直下からの相対パス
